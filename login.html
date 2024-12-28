@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+<body>
+  <h1>Login</h1>
+  <label for="role">Select Role:</label>
+  <select id="role">
+    <!-- Only provide "Student" role for dd4 -->
+    <option value="student">Student</option>
+  </select>
+
+  <button id="loginBtn">Login</button>
+
+  <script>
+    const loginBtn = document.getElementById('loginBtn');
+    const roleSelect = document.getElementById('role');
+
+    loginBtn.addEventListener('click', () => {
+      const selectedRole = roleSelect.value;
+      // Store the role in localStorage
+      localStorage.setItem('user-role', selectedRole);
+
+      // Redirect the user to the student page (dd4)
+      if (selectedRole === 'student') {
+        window.location.href = 'dd4.html'; // Redirect to student page
+      }
+    });
+  </script>
+</body>
+</html>
