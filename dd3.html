@@ -46,6 +46,12 @@
   
     let correctSentence = [];
 
+    const userRole = localStorage.getItem('user-role');
+    if (userRole !== 'teacher') {
+      // If the role is not "teacher", redirect to login page
+      window.location.href = 'login.html'; // Redirect to login
+    }
+
     // Generate color inputs dynamically when the teacher enters a sentence
     sentenceInput.addEventListener('input', () => {
       const words = sentenceInput.value.split(',').map(word => word.trim());
