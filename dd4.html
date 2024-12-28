@@ -36,6 +36,27 @@
   <button id="checkBtn" style="display:none;">Check</button>
   <div id="result"></div> <!-- Result message -->
 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Page - Drag-and-Drop Game</title>
+</head>
+<body>
+  <h1>Welcome Student! Drag-and-Drop Game</h1>
+  <!-- Game content will go here -->
+  
+  <script>
+    // Check if the user is logged in as a student
+    const userRole = localStorage.getItem('user-role');
+    if (userRole !== 'student') {
+      // If the role is not "student", redirect to login page
+      window.location.href = 'login.html'; // Redirect to login
+    }
+  </script>
+
+
   <script src="game.js"></script> <!-- Assuming your script is in game.js -->
 </body>
 </html>
